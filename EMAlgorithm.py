@@ -142,9 +142,6 @@ for loop in range(1,101):
     #Call the function
     initializeTrueLabel();
 
-    # Convert list into array, array(list) built-in function of numpy-Sample
-    #a=np.array(workers);
-
     # Declare and initialize confusion matrix with zero for each workers
     cMatrix=np.zeros((NoOfWorkers, NoOfLabels, NoOfLabels), float);
 
@@ -158,9 +155,9 @@ for loop in range(1,101):
                 for ol in range(NoOfLabels):
                     # if true label=observered label, 100%(1.0) else default 0.0
                     if tl==ol:
-                        cMatrix[w,tl,ol]=0.9;
+                        cMatrix[w,tl,ol]=0.8;
                     else:
-                        cMatrix[w,tl,ol]=format(0.1/(NoOfLabels-1),'.3f')
+                        cMatrix[w,tl,ol]=format(0.2/(NoOfLabels-1),'.3f')
 
 
     #Call the function
@@ -520,7 +517,7 @@ for loop in range(1,101):
                 
 
 
-
+    #Not used for the Thesis paper, may use it in future
     #Computing TP,TN,FP,FN based on the true labels
     def MCC():
         TP=0;
